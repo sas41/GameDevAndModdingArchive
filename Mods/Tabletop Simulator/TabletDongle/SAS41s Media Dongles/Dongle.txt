@@ -1,0 +1,15 @@
+MAKE SURE THERE IS ONLY 1 (ONE) DONGLE OUT AT ANY TIME AND YOU'RE THE ADMIN!
+
+This little tools is, mostly, for use with a web-server, where you can host mp3's and jpg/jpeg/png files.
+
+This dongle will pair with a tablet and scan every page you visit.
+
+If you open a url that ends with jpg/jpeg/png, it will spawn a custom board with that image.
+
+If you open a page that has hyperlinks to mp3 files, it will create a playlist and start playing the music with the in-game, built in music player for everyone (not through the tablet), the hyperlinks must link directly to mp3 files, the inner text of the hyperlinks will be used as names for the songs in the generated playlist.
+
+If your hyperlinks are relative, use the (Relative) version, which will add the current tablet URL to the beggining of the mp3 URLs
+To Unpair (only as an Admin):
+[code]
+!mdu
+[/code]

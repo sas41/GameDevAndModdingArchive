@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="68" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="wood" tilewidth="32" tileheight="32">
+  <image source="../tiles/wbrixx32.png" width="32" height="32"/>
+  <tile id="0">
+   <objectgroup draworder="index"/>
+  </tile>
+ </tileset>
+ <imagelayer name="background">
+  <image source="../backgrounds/redspiral.png"/>
+ </imagelayer>
+ <layer name="sprites" width="120" height="68">
+  <data encoding="base64" compression="zlib">
+   eJzt3UENwDAAA7GWP+mimCZd7E8AHICcQ9m16aVN5yZdN+jcpOsGnZt03aBzk64bdG7SdYPOTbpu0LlJ1w06N+m6QecmXTfo3KTrBp2bdN2gc5OuG3Ru0nWDzk26btC5SdcNOjfpukHnJl036Nyk6wadm3TdoHOTrht0btJ1g85Num7QuUnXDTo36bpB5yZdN+jcpOsGnZt03aBzk64bdG7SdYPOTbpu0LlJ1w06N+m64e9/afvtPqqDALk=
+  </data>
+ </layer>
+ <objectgroup name="collisions" visible="0">
+  <properties>
+   <property name="collidable" value="true"/>
+  </properties>
+  <object x="0" y="0" width="1920" height="32">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </object>
+  <object x="0" y="1056" width="1920" height="32"/>
+  <object x="0" y="32" width="32" height="1024"/>
+  <object x="1888" y="32" width="32" height="1024"/>
+ </objectgroup>
+ <objectgroup name="spawns" visible="0">
+  <object x="1344.55" y="900.091" width="20" height="18"/>
+  <object x="1341.52" y="160.697" width="20" height="18"/>
+  <object x="450.606" y="142.515" width="20" height="18"/>
+  <object x="474.848" y="897.061" width="20" height="18"/>
+ </objectgroup>
+ <objectgroup name="powerups" visible="0">
+  <object x="900" y="472" width="28" height="28"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,6 @@
+@BaseClass = weapon : "Weapon Base Class"
+[
+  Name(string) : "Name" : "Weapon Name"
+  Description(string) : "Description" : "Default Actionbox Weapon."
+  Damage(float) : "Damage" : "5"
+]

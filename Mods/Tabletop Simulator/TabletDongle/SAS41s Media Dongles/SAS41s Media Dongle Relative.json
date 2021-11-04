@@ -1,0 +1,60 @@
+{
+  "SaveName": "SAS41's Media Dongle (Relative)",
+  "GameMode": "",
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Date": "",
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "Rules": "",
+  "XmlUI": "",
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "ObjectStates": [
+    {
+      "Name": "Figurine_Custom",
+      "Transform": {
+        "posX": 0.0,
+        "posY": 0.0,
+        "posZ": 5.0,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "SAS41's Media Dongle (Relative)",
+      "Description": "Touch it to a tablet to pair.",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://i.imgur.com/d7SDvw7.png",
+        "ImageSecondaryURL": "https://i.imgur.com/d7SDvw7.png",
+        "ImageScalar": 2.0,
+        "WidthScale": 0.0
+      },
+      "XmlUI": "",
+      "LuaScript": "syncedTablet = nil\r\nurl = nil\r\nrelative = true\r\n\r\nfunction onUpdate()\r\n    if syncedTablet ~= nil then\r\n        if url ~= syncedTablet.getValue() then\r\n\r\n            url = syncedTablet.getValue()\r\n\r\n            local lastFour = string.sub(url, -4)\r\n            local lastFive = string.sub(url, -3)\r\n            if (lastFour == '.jpg' or lastFour == '.png' or lastFive == '.jpeg') then\r\n                WebRequest.get(url, function(a) webRequestCallback(a, 'image') end)\r\n            else\r\n                    WebRequest.get(url, function(a) webRequestCallback(a, 'page') end)\r\n            end\r\n\r\n        end\r\n    end\r\nend\r\n\r\nfunction onChat(message, player)\r\n    if (player.admin) then\r\n        local unpair = '!mdu'\r\n        if string.sub(message, 1, string.len(unpair)) == unpair then\r\n            syncedTablet = nil\r\n            print('Media Dongle Unpaired!')\r\n        end\r\n    end\r\nend\r\n\r\nfunction onCollisionEnter(collision_info)\r\n    if(collision_info.collision_object.tag == 'Tablet') then\r\n        syncedTablet = collision_info.collision_object\r\n    end\r\nend\r\n\r\nfunction webRequestCallback(webReturn, type)\r\n    if type == 'image' then\r\n        SpawnCustomBoard(webReturn.url)\r\n    else\r\n        DetectPlaylist(webReturn.text)\r\n    end\r\nend\r\n\r\nfunction SpawnCustomBoard(imageURL)\r\n    print(imageURL)\r\n\r\n    local spawnparams = {\r\n        type = 'Custom_Board',\r\n        position = {x=0, y=5, z=0}\r\n    }\r\n\r\n    local customparams = {\r\n        image = imageURL\r\n    }\r\n\r\n    local board = spawnObject(spawnparams)\r\n    board.setCustomObject(customparams)\r\n    board.reload()\r\nend\r\n\r\nfunction DetectPlaylist(pageBody)\r\n    local count = 0\r\n    local newPlayList = {}\r\n    for hyperlink in string.gmatch(pageBody, \"<a.-</a>\") do\r\n\r\n        local hyperlinkURL = string.match(hyperlink, \"href=\\\".-\\\"\")\r\n        hyperlinkURL = string.sub(hyperlinkURL, 7, string.len(hyperlinkURL)-1)\r\n\r\n        if string.sub(hyperlinkURL, -4) == '.mp3' then\r\n\r\n            local hyperlinkInner = string.match(hyperlink, \">.-</a>\")\r\n            hyperlinkInner = string.sub(hyperlinkInner, 2, string.len(hyperlinkInner)-4)\r\n\r\n            if  relative then\r\n                local fullpath = url..hyperlinkURL\r\n                table.insert(newPlayList, {url=fullpath, title=hyperlinkInner})\r\n            else\r\n                table.insert(newPlayList, {url=hyperlinkURL, title=hyperlinkInner})\r\n            end\r\n\r\n            count = count + 1\r\n        end\r\n    end\r\n\r\n    if (count > 0) then\r\n        print('Created a new playlist with ['..tostring(count)..'] itmes.')\r\n        MusicPlayer.setPlaylist(newPlayList)\r\n        MusicPlayer.setCurrentAudioclip(newPlayList[math.random(1,count)])\r\n    end\r\nend\r\n",
+      "LuaScriptState": "",
+      "GUID": "76fec7"
+    }
+  ],
+  "TabStates": {},
+  "VersionNumber": ""
+}

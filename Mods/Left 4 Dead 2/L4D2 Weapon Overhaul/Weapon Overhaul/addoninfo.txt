@@ -1,0 +1,12 @@
+"AddonInfo"
+{
+	addonSteamAppID	550      	
+	addontitle	"Weapon Overhaul TEST" 	
+	addonversion	1.1			
+	addontagline	""
+	addonauthor	"SAS41" 		
+	addonauthorSteamID	"https://steamcommunity.com/id/SASXLI" 
+	Content_Weapon	1
+	addonDescription	"Complete Weapon Overhaul of Base and CSS weapons, inspired by other similar mods."
+
+}

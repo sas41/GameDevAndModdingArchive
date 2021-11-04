@@ -1,0 +1,131 @@
+"Gamemode"
+{
+	"base"		"base"
+	"title"		"Free For All 2.0"
+	"maps"		"^ffa_"
+	"menusystem"	"1"
+	"workshopid"	"241166935"
+	
+	"settings"
+	{
+	
+		1
+		{
+			"name"		"ffa_maxtime"
+			"text"		"Max Round Time (seconds)"
+			"help"		"The maxiumum round time before a map change"
+			"type"		"numeric"
+			"default"	"600"
+		}
+
+		2
+		{
+			"name"		"ffa_freezetime"
+			"text"		"Will determine the duration of the freeze time"
+			"help"		"Will determine the duration of the freeze time"
+			"type"		"numeric"
+			"default"	"30"
+		}
+		
+		3
+		{
+			"name"		"ffa_spawnprotection"
+			"text"		"Define the duration of the spawn protection"
+			"help"		"Define the duration of the spawn protection"
+			"type"		"numeric"
+			"default"	"3"
+		}
+		
+		4
+		{
+			"name"		"ffa_weapons"
+			"text"		"Enable or Disable Weapon loadouts"
+			"help"		"Enable or Disable Weapon loadouts"
+			"type"		"numeric"
+			"default"	"1"
+		}
+		
+		5
+		{
+			"name"		"ffa_perks"
+			"text"		"Enable or Disable Perks"
+			"help"		"Enable or Disable Perks"
+			"type"		"numeric"
+			"default"	"1"
+		}
+		
+		6
+		{
+			"name"		"ffa_slowmotion"
+			"text"		"Weather Random Slowmotion effects should play"
+			"help"		"Weather Random Slowmotion effects should play"
+			"type"		"numeric"
+			"default"	"1"
+		}
+		
+		7
+		{
+			"name"		"ffa_slowmotion_chance"
+			"text"		"How often should the Slowmotion Effect trigger (numeric, represents percentage, i.e. 100 means 100% of the time)"
+			"help"		"How often should the Slowmotion Effect trigger (numeric, represents percentage, i.e. 100 means 100% of the time)"
+			"type"		"numeric"
+			"default"	"10"
+		}
+		
+		8
+		{
+			"name"		"ffa_slowmotion_duration"
+			"text"		"Duration of the Slowmotion Effect in seconds"
+			"help"		"Duration of the Slowmotion Effect in seconds"
+			"type"		"numeric"
+			"default"	"3"
+		}
+		
+		9
+		{
+			"name"		"ffa_base_health"
+			"text"		"Base Player Health"
+			"help"		"Base Player Health"
+			"type"		"numeric"
+			"default"	"100"
+		}
+		
+		10
+		{
+			"name"		"ffa_base_armor"
+			"text"		"Base Player Armor"
+			"help"		"Base Player Armor"
+			"type"		"numeric"
+			"default"	"30"
+		}
+		
+		11
+		{
+			"name"		"ffa_base_walkingspeed"
+			"text"		"Base Player Walking Speed"
+			"help"		"Base Player Walking Speed"
+			"type"		"numeric"
+			"default"	"200"
+		}
+		
+		12
+		{
+			"name"		"ffa_base_sprintingspeed"
+			"text"		"Base Player Sprinting Speed"
+			"help"		"Base Player Sprinting Speed"
+			"type"		"numeric"
+			"default"	"300"
+		}
+		
+		13
+		{
+			"name"		"ffa_base_jumppower"
+			"text"		"Base Player Jump Power"
+			"help"		"Base Player Jump Power"
+			"type"		"numeric"
+			"default"	"300"
+		}
+
+	}
+
+}

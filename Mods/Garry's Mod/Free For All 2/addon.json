@@ -1,0 +1,9 @@
+{
+	"title"		:	"Free For All 2.0",
+	"type"		:	"gamemode",
+	"tags"		:	[ "fun", "realism" ],
+	"ignore"	:
+	[
+		"*.db"
+	]
+}

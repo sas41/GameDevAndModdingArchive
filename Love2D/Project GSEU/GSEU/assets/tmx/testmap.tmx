@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="wood32" tilewidth="32" tileheight="32">
+  <image source="../tiles/wood32.png" width="32" height="32"/>
+  <tile id="0">
+   <objectgroup draworder="index"/>
+  </tile>
+ </tileset>
+ <layer name="Tiles 1" width="40" height="22">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEKAEAIA8H4/09bHVxlk2YDWbAfEMGRNPChVp9XfV70O6G6Xik+6o6Jpr/6vFJ81N+BYLiqz6s+rxQfeRaWqQCF
+  </data>
+ </layer>
+ <objectgroup color="#ffff02" name="collisions">
+  <properties>
+   <property name="collidable" value="true"/>
+  </properties>
+  <object name="Bottom" x="-2" y="671" width="1277" height="32"/>
+  <object name="Top" x="0" y="-1" width="1277" height="32"/>
+  <object x="-1" y="33" width="32" height="636"/>
+  <object x="1248" y="33" width="32" height="636"/>
+  <object x="33" y="450" width="222" height="28"/>
+  <object x="34" y="290" width="93" height="27"/>
+  <object x="36" y="194" width="59" height="29"/>
+  <object x="705" y="662">
+   <polyline points="0,0 1,-20 27,-20 31,-51 61,-52 62,-85 95,-85 95,-115 125,-116 127,-149 160,-148 236,-225 321,-247 391,-338 505,-388 540,-453"/>
+  </object>
+ </objectgroup>
+</map>
